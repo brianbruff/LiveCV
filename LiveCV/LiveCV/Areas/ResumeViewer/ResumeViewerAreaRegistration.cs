@@ -13,12 +13,14 @@ namespace LiveCV.Areas.ResumeViewer
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
-        {
+        {            
             context.MapRoute(
                 "ResumeViewer_default",
-                "ResumeViewer/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                "ResumeViewer/{controller}/{id}",
+                new { controller = "Resume", action = "Index", id = UrlParameter.Optional });
+
+
+           
         }
     }
 }

@@ -17,17 +17,17 @@
     @RenderSection("Scripts", false)
 
 </head>
-<body>    
+<body>        
     <div id="container">
         <div id="header">
             <h1>
-                <a href="http://www.briankeating.net">Brian Keating</a></h1>
+                <a href="http://resume.briankeating.net">Brian Keating</a></h1>
             <p>
                 Professional Software Developer</p>
             <div id="topmenu">
-                <ul>
-                    <li><a class="highlight" href="@Url.Action("Index", "PersonalDetails")"><span>Personal</span></a>
-                    <li><a href="@Url.Action("Index", "Education")"><span>Education</span></a> </li>
+                <ul>                    
+                    <li><a class="highlight" href="@Url.Action("Index", "PersonalDetails", new { id = TempData["ResumeId"] })"><span>Personal</span></a>
+                    <li><a href="@Url.Action("Index", "Education", new { id = 1 })"><span>Education</span></a> </li>
                     <li><a href="@Url.Action("Index", "WorkDetails")"><span>Experience</span></a>                    
                     <li><a href="@Url.Action("Index", "Technology")"><span>Technology</span></a> </li>                    
                     
