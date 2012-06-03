@@ -138,6 +138,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ResumeViewer\Controllers\EducationController.cs" />
+    <Compile Include="Areas\ResumeViewer\Controllers\PersonalDetailsController.cs" />
+    <Compile Include="Areas\ResumeViewer\Controllers\ResumeController.cs" />
+    <Compile Include="Areas\ResumeViewer\Controllers\TechnologyController.cs" />
+    <Compile Include="Areas\ResumeViewer\Controllers\WorkDetailsController.cs" />
+    <Compile Include="Areas\ResumeViewer\ResumeViewerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -229,6 +235,21 @@
     <Content Include="Content\wait30trans.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Areas\ResumeViewer\Views\Web.config" />
+    <Content Include="Areas\ResumeViewer\Views\Education\Index.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\PersonalDetails\Index.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\About.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\EducationDetails.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\Index.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\PersonalDetails.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\TechCategory.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Resume\WorkDetails.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Shared\DisplayTemplates\MonthYearDate.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\Technology\Index.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\WorkDetails\Index.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
@@ -331,6 +352,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ResumeViewer\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

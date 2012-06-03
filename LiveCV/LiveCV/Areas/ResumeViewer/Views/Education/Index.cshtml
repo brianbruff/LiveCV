@@ -1,0 +1,111 @@
+﻿@model ICollection<LiveCV.Models.EducationDetails>
+           
+@{
+    if (Request.IsAjaxRequest())
+    {
+        Layout = string.Empty;
+    }
+    else 
+    {
+        
+    }
+
+
+    foreach (var ed in Model)
+    { 
+        <div class="post">
+            <h2>
+                <a href="#">Education Details</a>
+            </h2>
+            <p class="posted">
+                <span class="posttime">Third Level Education</span>
+            </p>
+            <div class="entry">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                Name</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                               @ed.Name)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                Address</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @ed.Address
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                Website</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                <a href="@ed.Website" target="new">@ed.Website</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                Qualification</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @ed.Qualification
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                Notes</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                               @ed.Notes
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                StartDate</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @ed.StartDate.ToString("MMM yyyy")
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="display-label">
+                                EndDate</div>
+                        </td>
+                        <td>
+                            <div class="display-field">
+                                @if (ed.EndDate != null && ed.EndDate.HasValue)
+                                {                            
+                                    @ed.EndDate.Value.ToString("MMM yyyy")                            
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    }
+}
+
+
