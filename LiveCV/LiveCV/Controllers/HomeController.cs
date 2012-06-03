@@ -7,7 +7,6 @@ namespace LiveCV.Controllers
 {
     public class HomeController : Controller
     {
-        //private Models.LiveCVContext _context = new Models.LiveCVContext(ConfigurationManager.ConnectionStrings["Azure"].ConnectionString);
         LiveCV.Models.LiveCVContext _context = new Models.LiveCVContext();
 
         public ActionResult Index()

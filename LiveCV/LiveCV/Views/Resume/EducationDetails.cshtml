@@ -1,0 +1,94 @@
+﻿@model LiveCV.Models.EducationDetails
+ 
+ <p>not in use todo:</p>          
+
+    <div class="post">
+        <h2>
+            <a href="#">Education Details</a>
+        </h2>
+        <p class="posted">
+            <span class="posttime">Third Level Education</span>
+        </p>
+        <div class="entry">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            Name</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Name)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            Address</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Address)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            Website</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            <a href="@Model.Website" target="new">@Model.Website</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            Qualification</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Qualification)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            Notes</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Notes)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            StartDate</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StartDate, "MonthYearDate")
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            EndDate</div>
+                    </td>
+                    <td>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.EndDate, "MonthYearDate")
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
