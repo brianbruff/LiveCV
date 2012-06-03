@@ -18,23 +18,23 @@ var menuHandler = function () {
 
         if (busy)
             return;
-
+        
         busy = true;
 
         $("#topmenu a").removeClass("highlight");
         var href = ws.get(0).href;
 
         var contentWrapSet = $("#content")
-
-        //contentWrapSet.slideUp("fast", function () {
-            contentWrapSet.load(href, function () {
-                ws.addClass("highlight");
-                ws.blur();
-                contentWrapSet.slideDown("fast");
-                busy = false;
-            });
-        //});
-        }
+               
+        contentWrapSet.load(href, function () {
+            ws.addClass("highlight");
+            ws.blur();
+            contentWrapSet.slideDown("slow");
+            if (history.pushState)
+                history.pushState(null, "", href);
+            busy = false;
+        });
+    }
 
     return {
         init: init

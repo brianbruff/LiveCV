@@ -12,7 +12,9 @@ namespace LiveCV.Areas.ResumeViewer.Controllers
         public ActionResult Index(int id)
         {
             TempData["ResumeId"] = id.ToString();
-            return View(_context.Resumes.Single(r => r.ResumeId == id));
+            var resume = _context.Resumes.Single(r => r.ResumeId == id);
+            ViewBag.Website = resume.PersonalDetails.Website;
+            return View(resume);
         }        
     }
 }
