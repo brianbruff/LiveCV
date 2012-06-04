@@ -11,8 +11,8 @@ namespace LiveCV.Areas.ResumeViewer.Controllers
         
         public ActionResult Index(int id)
         {
-            TempData["ResumeId"] = id.ToString();
             var resume = _context.Resumes.Single(r => r.ResumeId == id);
+            ViewBag.ResumeId = id.ToString();            
             ViewBag.Website = resume.PersonalDetails.Website;
             return View(resume);
         }        

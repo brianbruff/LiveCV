@@ -1,40 +1,27 @@
-﻿/// <reference path="jquery-1.7.1.min.js" />
-/// <reference path="jquery-ui-1.8.16.min.js" />
+﻿// <reference path="jquery-1.7.1.min.js" />
+// <reference path="jquery-ui-1.8.16.min.js" />
 
 var menuHandler = function () {
     var busy = false;
 
     var init = function () {
-        // Set the inital content for the view
-        //$("#content").load("PersonalDetails");
+        var wsMenu = $("#topmenu a");
+        wsMenu.removeClass("highlight");
 
-        $("#topmenu a").click(function (e) {
-            selectTab($(this), e);
-            e.preventDefault();
+        // Now find 
+        var currentUrl = window.location.href.toLowerCase();
+        if (currentUrl.substr(-1) == '/')
+            currentUrl = currentUrl.substr(0, currentUrl.length - 1);
+
+        wsMenu.each(function (index, element) {            
+            if (element.href.toLowerCase() == currentUrl)
+                $(this).addClass("highlight");
         });
+        
+
     };
 
-    var selectTab = function (ws, event) {
-
-        if (busy)
-            return;
-        
-        busy = true;
-
-        $("#topmenu a").removeClass("highlight");
-        var href = ws.get(0).href;
-
-        var contentWrapSet = $("#content")
-               
-        contentWrapSet.load(href, function () {
-            ws.addClass("highlight");
-            ws.blur();
-            contentWrapSet.slideDown("slow");
-            if (history.pushState)
-                history.pushState(null, "", href);
-            busy = false;
-        });
-    }
+    
 
     return {
         init: init

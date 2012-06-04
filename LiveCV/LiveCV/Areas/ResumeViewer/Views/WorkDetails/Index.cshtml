@@ -50,3 +50,31 @@
 </div>
     }
     }
+
+@section Scripts{
+
+    <link rel="stylesheet" href="~/content/timeline/style_v.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="~/Scripts/jquery.timelinr-0.9.5.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $().timelinr({
+                orientation: 'vertical',
+                issuesSpeed: 300,
+                datesSpeed: 100,
+                arrowKeys: 'true',
+                startAt: 3
+            })
+        });
+	</script>
+}
+
+@section SideBar{
+    
+    <div id="sidebar">
+                <div class="about">                    
+                    @Html.Partial("TimeLine", Model)
+                </div>
+            </div>
+}   

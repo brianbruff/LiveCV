@@ -8,14 +8,22 @@ using System.Configuration;
 namespace LiveCV.Areas.ResumeViewer.Controllers
 {
     public class WorkDetailsController : Controller
-    {
+    {       
         LiveCV.Models.LiveCVContext _context = new Models.LiveCVContext();
-        //
-        // GET: /Work/
+
+
+
+        public WorkDetailsController()
+        {
+
+        }
 
         public ActionResult Index(int id)
         {
-            return View(_context.Resumes.Single(r => r.ResumeId == id).WorkDetails.OrderByDescending(wd => wd.Start).ToList());
+            var resume = _context.Resumes.Single(r => r.ResumeId == id);
+            ViewBag.ResumeId = id.ToString();
+            ViewBag.Website = resume.PersonalDetails.Website;
+            return View(resume.WorkDetails.OrderByDescending(wd => wd.Start).ToList());
         }
 
        

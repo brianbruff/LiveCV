@@ -242,6 +242,30 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\timeline\1.png" />
+    <Content Include="Content\timeline\10.png" />
+    <Content Include="Content\timeline\2.png" />
+    <Content Include="Content\timeline\3.png" />
+    <Content Include="Content\timeline\4.png" />
+    <Content Include="Content\timeline\5.png" />
+    <Content Include="Content\timeline\6.png" />
+    <Content Include="Content\timeline\7.png" />
+    <Content Include="Content\timeline\8.png" />
+    <Content Include="Content\timeline\9.png" />
+    <Content Include="Content\timeline\Automation.png" />
+    <Content Include="Content\timeline\biggerdot.png" />
+    <Content Include="Content\timeline\dot.gif" />
+    <Content Include="Content\timeline\finance.png" />
+    <Content Include="Content\timeline\grad_bottom.png" />
+    <Content Include="Content\timeline\grad_left.png" />
+    <Content Include="Content\timeline\grad_right.png" />
+    <Content Include="Content\timeline\grad_top.png" />
+    <Content Include="Content\timeline\next.png" />
+    <Content Include="Content\timeline\next_v.png" />
+    <Content Include="Content\timeline\prev.png" />
+    <Content Include="Content\timeline\prev_v.png" />
+    <Content Include="Content\timeline\style.css" />
+    <Content Include="Content\timeline\style_v.css" />
     <Content Include="Content\wait30trans.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -260,6 +284,8 @@
     <Content Include="Areas\ResumeViewer\Views\Technology\Index.cshtml" />
     <Content Include="Areas\ResumeViewer\Views\WorkDetails\Index.cshtml" />
     <Content Include="Areas\ResumeViewer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ResumeViewer\Views\WorkDetails\TimeLine.cshtml" />
+    <None Include="Properties\PublishProfiles\test.briankeating.net - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
@@ -272,6 +298,7 @@
     <Content Include="Scripts\jquery-ui-1.8.20.min.js">
       <DependentUpon>jquery-ui-1.8.20.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery.timelinr-0.9.5.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js">
       <DependentUpon>jquery.validate.js</DependentUpon>
@@ -280,20 +307,12 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Resume.js" />
-    <Content Include="Views\Education\Index.cshtml" />
     <Content Include="Views\Home\EducationDetails.cshtml" />
     <Content Include="Views\Home\PersonalDetails.cshtml" />
     <Content Include="Views\Home\TechCategory.cshtml" />
     <Content Include="Views\Home\WorkDetails.cshtml" />
-    <Content Include="Views\PersonalDetails\Index.cshtml" />
-    <Content Include="Views\Technology\Index.cshtml" />
-    <Content Include="Views\WorkDetails\Index.cshtml" />
-    <Content Include="Views\Resume\About.cshtml" />
-    <Content Include="Views\Resume\EducationDetails.cshtml" />
-    <Content Include="Views\Resume\Index.cshtml" />
-    <Content Include="Views\Resume\PersonalDetails.cshtml" />
-    <Content Include="Views\Resume\TechCategory.cshtml" />
-    <Content Include="Views\Resume\WorkDetails.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MonthYearDate.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

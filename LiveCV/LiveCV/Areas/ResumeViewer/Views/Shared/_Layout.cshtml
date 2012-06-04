@@ -26,11 +26,10 @@
                 Professional Software Developer</p>
             <div id="topmenu">
                 <ul>                    
-                    <li><a class="highlight" href="@Url.Action("Index", "PersonalDetails", new { id = TempData["ResumeId"] })"><span>Personal</span></a>
-                    <li><a href="@Url.Action("Index", "Education", new { id = TempData["ResumeId"] })"><span>Education</span></a> </li>
-                    <li><a href="@Url.Action("Index", "WorkDetails", new { id = TempData["ResumeId"] })"><span>Experience</span></a>                    
-                    <li><a href="@Url.Action("Index", "Technology", new { id = TempData["ResumeId"] })"><span>Technology</span></a> </li>                    
-                    
+                    <li><a class="highlight" href="@Url.Action("Index", "Resume", new { id = ViewBag.ResumeId })"><span>Personal</span></a>
+                    <li><a href="@Url.Action("Index", "Education", new { id = ViewBag.ResumeId })"><span>Education</span></a> </li>
+                    <li><a href="@Url.Action("Index", "WorkDetails", new { id = ViewBag.ResumeId })"><span>Experience</span></a>                    
+                    <li><a href="@Url.Action("Index", "Technology", new { id = ViewBag.ResumeId })"><span>Technology</span></a> </li>
                 </ul>
             </div>
         </div> 
@@ -39,11 +38,13 @@
             <div id="content" >
                 @RenderBody()
             </div>
+
+            @RenderSection("SideBar", false)
             @*<div id="sidebar">
                 <div class="about">                    
                     <img class="centered" src="../../Content/myHead.png" alt="Picture of Me" />
                 </div>
-                </div>*@
+            </div>*@
         </div>      
     </div>
     
