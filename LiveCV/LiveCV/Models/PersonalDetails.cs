@@ -38,9 +38,13 @@ namespace LiveCV.Models
 
         public string Notes { get; set; }
 
+        //public string Interests { get; set; }
+
         virtual public List<string> Hobbies { get; set; }
 
         virtual public List<string> Achievements { get; set; }
+
+
 
     }
 }

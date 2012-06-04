@@ -154,6 +154,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201206030014353_InitialCreate.cs" />
+    <Compile Include="Migrations\201206030014353_InitialCreate.Designer.cs">
+      <DependentUpon>201206030014353_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201206031749174_AddPersonalHobbies.cs" />
+    <Compile Include="Migrations\201206031749174_AddPersonalHobbies.Designer.cs">
+      <DependentUpon>201206031749174_AddPersonalHobbies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Books.cs" />
     <Compile Include="Models\Competency.cs" />
@@ -169,6 +178,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LiveCV.Models.LiveCVContext.sdf" />
     <Content Include="Content\blue-bl.gif" />
     <Content Include="Content\blue-blh.gif" />
     <Content Include="Content\blue-br.gif" />
@@ -351,7 +361,6 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\ResumeViewer\Models\" />
   </ItemGroup>
   <ItemGroup>
