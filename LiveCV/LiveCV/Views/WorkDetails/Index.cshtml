@@ -1,0 +1,80 @@
+﻿@model ICollection<LiveCV.Models.WorkDetails>
+@{   
+    if (Request.IsAjaxRequest())
+    {
+        Layout = string.Empty;
+    }
+            
+    foreach (var wd in Model)
+    { 
+<div class="post">
+    <div class="post">
+        <h2>        
+            <a href="#">@wd.Name</a>
+        </h2>     
+        
+        <p class="posted">
+            <span class="posttime">@wd.Title</span>
+        </p>           
+        @if (wd.End != null && wd.End.HasValue)
+        { 
+            <h4>@wd.Location (@wd.Start.ToString("MMM yyyy") - @wd.End.Value.ToString("MMM yyyy"))</h4>
+        }
+        else
+        { 
+            <h4>@wd.Location (@wd.Start.ToString("MMM yyyy") - Present)</h4>
+        }
+                
+        <div class="entry">                        
+            <div class="display-field">
+                @wd.CompanyDescription
+            </div>
+                        
+            
+            @if (@wd.WorkItems.Count != 0)
+            {
+                <ul>
+                @foreach (var wi in wd.WorkItems)
+                {
+                    <li><b>@wi.Title</b> @wi.Description</li>                        
+                }
+                </ul>
+                
+            }
+            else
+            { 
+                <div class="display-field">@wd.Description</div>
+            }
+</div>
+</div>
+</div>
+    }
+    }
+
+@section Scripts{
+
+    <link rel="stylesheet" href="~/content/timeline/style_v.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="~/Scripts/jquery.timelinr-0.9.5.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $().timelinr({
+                orientation: 'vertical',
+                issuesSpeed: 300,
+                datesSpeed: 100,
+                arrowKeys: 'true',
+                startAt: 3
+            })
+        });
+	</script>
+}
+
+@section SideBar{
+    
+    <div id="sidebar">
+                <div class="about">                    
+                    @Html.Partial("TimeLine", Model)
+                </div>
+            </div>
+}   

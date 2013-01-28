@@ -11,7 +11,9 @@ namespace LiveCV.Controllers
 
         public ActionResult Index()
         {
-            return View(_context.Resumes.First());            
+            var firstResume = _context.Resumes.First();
+            ViewBag.ResumeId = firstResume.ResumeId;
+            return View(firstResume);            
         }
 
         public ActionResult About()

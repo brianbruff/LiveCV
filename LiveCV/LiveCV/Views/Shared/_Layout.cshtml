@@ -6,31 +6,33 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta name="keywords" content="Brian Keating, Software Development, Resume">
     <meta name="description" content="Resume Brian Keating">
+    
+    <script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
+
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
-
-    <script src="@Url.Content("~/Scripts/jquery-1.7.2.js")" type="text/javascript"></script>    
-    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+    
+    <script src="@Url.Content("~/Scripts/jquery-1.9.0.js")" type="text/javascript"></script>    
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.0.js")" type="text/javascript"></script>
+    
     <script src="@Url.Content("~/Scripts/Resume.js")" type="text/javascript"></script>
 
     @RenderSection("Scripts", false)
 
 </head>
-<body>    
+<body>        
     <div id="container">
         <div id="header">
             <h1>
-                <a href="http://www.briankeating.net">Brian Keating</a></h1>
+                <a href="@ViewBag.Website">Brian Keating</a></h1>
             <p>
                 Professional Software Developer</p>
             <div id="topmenu">
-                <ul>
-                    <li><a class="highlight" href="@Url.Action("Index", "PersonalDetails")"><span>Personal</span></a>
-                    <li><a href="@Url.Action("Index", "Education")"><span>Education</span></a> </li>
-                    <li><a href="@Url.Action("Index", "WorkDetails")"><span>Experience</span></a>                    
-                    <li><a href="@Url.Action("Index", "Technology")"><span>Technology</span></a> </li>                    
-                    
+                <ul>                    
+                    <li><a class="highlight" href="@Url.Action("Index", "Resume", new { id = ViewBag.ResumeId })"><span>Personal</span></a>
+                    <li><a href="@Url.Action("Index", "Education", new { id = ViewBag.ResumeId })"><span>Education</span></a> </li>
+                    <li><a href="@Url.Action("Index", "WorkDetails", new { id = ViewBag.ResumeId })"><span>Experience</span></a>                    
+                    <li><a href="@Url.Action("Index", "Technology", new { id = ViewBag.ResumeId })"><span>Technology</span></a> </li>
                 </ul>
             </div>
         </div> 
@@ -39,11 +41,13 @@
             <div id="content" >
                 @RenderBody()
             </div>
+
+            @RenderSection("SideBar", false)
             @*<div id="sidebar">
                 <div class="about">                    
                     <img class="centered" src="../../Content/myHead.png" alt="Picture of Me" />
                 </div>
-                </div>*@
+            </div>*@
         </div>      
     </div>
     

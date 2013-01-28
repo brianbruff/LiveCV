@@ -3,21 +3,18 @@ using System.Web.Mvc;
 using System.Linq;
 using System.Configuration;
 
-namespace LiveCV.Controllers
+namespace LiveCV.Areas.ResumeViewer.Controllers
 {
     public class ResumeController : Controller
-    {
-        //private Models.LiveCVContext _context = new Models.LiveCVContext(ConfigurationManager.ConnectionStrings["Azure"].ConnectionString);
+    {        
         LiveCV.Models.LiveCVContext _context = new Models.LiveCVContext();
-
-        public ActionResult Index()
+        
+        public ActionResult Index(int id)
         {
-            return View(_context.Resumes.First());            
-        }
-
-        public ActionResult About()
-        {
-            return View();
-        }
+            var resume = _context.Resumes.Single(r => r.ResumeId == id);
+            ViewBag.ResumeId = id.ToString();            
+            ViewBag.Website = resume.PersonalDetails.Website;
+            return View(resume);
+        }        
     }
 }

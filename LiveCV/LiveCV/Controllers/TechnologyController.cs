@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 
-namespace LiveCV.Controllers
+namespace LiveCV.Areas.ResumeViewer.Controllers
 {
     public class TechnologyController : Controller
     {
@@ -13,95 +13,12 @@ namespace LiveCV.Controllers
         //
         // GET: /Technology/
 
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(_context.Resumes.First().TechCategories);
-        }
-
-        //
-        // GET: /Technology/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Technology/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        } 
-
-        //
-        // POST: /Technology/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        
-        //
-        // GET: /Technology/Edit/5
- 
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Technology/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Technology/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Technology/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            var resume = _context.Resumes.Single(r => r.ResumeId == id);
+            ViewBag.ResumeId = id.ToString();
+            ViewBag.Website = resume.PersonalDetails.Website;
+            return View(resume.TechCategories);
         }
     }
 }
